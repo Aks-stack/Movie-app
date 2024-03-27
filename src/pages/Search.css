@@ -1,0 +1,28 @@
+.container1 {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.item1 {
+    font-size: smaller;
+    width: 420px;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+input[type="search"] {
+    width: 450px;
+    
+}
+
+h1 {
+    padding-top: 30px;
+    color: aliceblue;
+}
+
