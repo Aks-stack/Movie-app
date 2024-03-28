@@ -45,7 +45,7 @@ export default function Movie(props) {
         </div>
         
         <h3 className='recom'>Related Movies:</h3>
-        <div className='container'>
+        <div className='container2'>
             {
                 Recom?.map((movie) => {
                     return <div key={movie.id} className="item"><Card original_title={movie.title} poster_path={movie.poster_path}
