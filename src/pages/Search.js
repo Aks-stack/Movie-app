@@ -48,7 +48,7 @@ export default function Search() {
         </div>
         <div className='container1'>
             {
-                Sdata.map((movie) => {
+                Sdata?.map((movie) => {
                     return <div key={movie.id} className="item1"><Card original_title={movie.title} poster_path={movie.poster_path}
                     release_date={movie.release_date} overview={movie.overview} id={movie.id}/>
                     </div>

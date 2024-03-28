@@ -36,7 +36,7 @@ export default function Movie(props) {
                 <h1 className='title'>{Cmovie?.title}</h1>
                 <img className='poster' src={`https://image.tmdb.org/t/p/original/${Cmovie?.poster_path}`} alt='/'/>
                 <p className='date'>Release date: {Cmovie?.release_date}  Runtime: {Cmovie?.runtime}m</p>
-                <p className='date'>Director: {Cmovie?.credits.crew[3].name}</p>
+                {/* <p className='date'>Director: {Cmovie?.credits.crew[3].name}</p> */}
                 <div className='imdb'>
                     <a className="btn btn-warning" href={`https://www.imdb.com/title/${Cmovie?.imdb_id}`}>IMDB</a>
                 </div>
