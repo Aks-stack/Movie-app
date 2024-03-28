@@ -27,7 +27,7 @@ export default function Movie(props) {
 
   return (
     <div >
-        <div className='row'>
+        <div className='row' style={{marginLeft:"0px",marginRight:"0px"}}>
             <div className='col-md-8'>
                 <iframe className="player" title='p1' allowFullScreen src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`}></iframe>
                 {/* <iframe className="player" title='p1' allowFullScreen src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`} style={{width: "100%", height: "600px", margin: "30px"}}></iframe> */}
