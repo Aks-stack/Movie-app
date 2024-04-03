@@ -10,7 +10,7 @@ export default function Card(props) {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title" style={{overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis",width:"200px"}}>{props.original_title}</h5>
+                        <h5 className="card-title" style={{overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis",width:"100%"}}>{props.original_title}</h5>
                         <p className="card-text">{`${props.overview.slice(0,55)}...`}</p>
                     </div>
                     <ul className="list-group list-group-flush">

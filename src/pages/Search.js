@@ -42,7 +42,7 @@ export default function Search() {
         <h1>Search for any Movie</h1>
         <div className='container' data-bs-theme="dark">
             <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="tet" onChange={handleoc} />
+                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleoc} />
                 {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
             </form>
         </div>

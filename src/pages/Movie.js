@@ -2,12 +2,24 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Card from '../components/Card'
 import "./Movie.css"
+import Modal from '../components/Modal'
+import YouTube from 'react-youtube'
 
 export default function Movie(props) {
 
     const [Cmovie, setCmovie] = useState()
     const [Recom, setRecom] = useState()
     const { id } = useParams()
+    const [Open, setOpen] = useState(false)
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+    const handleOpen = () => {
+        setOpen(true)
+    }
+
 
     // useEffect(() => {
     //     fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=recommendations&api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
@@ -17,7 +29,7 @@ export default function Movie(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=recommendations,credits&api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=recommendations,credits,videos&api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
         const data = await res.json();
         setCmovie(data)
         setRecom(data.recommendations.results.slice(0,6))
@@ -29,16 +41,23 @@ export default function Movie(props) {
     <div >
         <div className='row' style={{marginLeft:"0px",marginRight:"0px"}}>
             <div className='col-md-8'>
-                <iframe className="player" title='p1' allowFullScreen src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`}></iframe>
-                {/* <iframe className="player" title='p1' allowFullScreen src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`} style={{width: "100%", height: "600px", margin: "30px"}}></iframe> */}
+                <div className='iframeContainer'>
+                    <iframe className="player" title='p1' allowFullScreen src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`}></iframe>
+                </div>
             </div>
             <div className='col-md-4'>
                 <h1 className='title'>{Cmovie?.title}</h1>
                 <img className='poster' src={`https://image.tmdb.org/t/p/original/${Cmovie?.poster_path}`} alt='/'/>
                 <p className='date'>Release date: {Cmovie?.release_date}  Runtime: {Cmovie?.runtime}m</p>
-                {/* <p className='date'>Director: {Cmovie?.credits.crew[3].name}</p> */}
+                <p className='date'>Director: {Cmovie?.credits.crew.find(member => member.job === "Director")?.name}</p>
                 <div className='imdb'>
                     <a className="btn btn-warning" href={`https://www.imdb.com/title/${Cmovie?.imdb_id}`}>IMDB</a>
+                    <button type='button' className="btn btn-danger" style={{marginLeft:"15px"}} onClick={handleOpen}>Trailer</button>
+                    <Modal isOpen={Open} onClose={handleClose}>
+                        <>
+                            <YouTube videoId={Cmovie?.videos.results.find(vid => vid.name.toLowerCase().includes("official trailer"))?.key} style={{marginBottom:"-7px"}}/>
+                        </>
+                    </Modal>
                 </div>
                 <p className='synopsis'>{Cmovie?.overview}</p>
             </div>
