@@ -24,8 +24,6 @@ function App() {
           </Routes>
         <Footer/> 
       </Router>
-        {/* <header className="App-header"> 
-        </header> */}
     </div>
   );
 }
