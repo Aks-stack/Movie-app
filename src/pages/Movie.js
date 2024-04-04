@@ -55,7 +55,7 @@ export default function Movie(props) {
                     <button type='button' className="btn btn-danger" style={{marginLeft:"15px"}} onClick={handleOpen}>Trailer</button>
                     <Modal isOpen={Open} onClose={handleClose}>
                         <>
-                            <YouTube videoId={Cmovie?.videos.results.find(vid => vid.name.toLowerCase().includes("official trailer"))?.key} style={{marginBottom:"-7px"}}/>
+                            <YouTube videoId={Cmovie?.videos.results.find(vid => vid.name.toLowerCase().includes("official trailer"))?.key} iframeClassName="youtubePlayer" className='youtubeContainer'/>
                         </>
                     </Modal>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateSearchQuery } from './actions'
+import './Navbar.css'
 
 
 export default function Navbar(props) {
@@ -43,7 +44,7 @@ export default function Navbar(props) {
               <a className="nav-link" href="/">About</a>
             </li>
           </ul>
-          <form className="d-flex" role="search" style={{ width: "40%", minWidth: "300px" }}>
+          <form className="d-flex formfix" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={searchQuery} onSubmit={(e) => e.preventDefault()} onChange={handleSearchSubmit} />
             <a className="btn btn-outline-light" href="https://github.com/Aks-stack" style={{ width: "130px" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
