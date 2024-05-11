@@ -1,10 +1,10 @@
-# Title: Movie Streaming Web App with React and Redux
+# Movie Streaming Web App with React and Redux
 
 ## Description:
 
 This project is a web application for browsing and potentially streaming movies. It's built with React.js for a performant and user-friendly interface, and Redux for efficient state management.
 
-## Features (Consider adding specific features your app offers):
+## Features:
 
 Movie Browsing: Explore a comprehensive collection of movies from a reliable source TMDB API.
 
@@ -42,8 +42,8 @@ npm (package manager that comes with Node.js) or yarn (alternative package manag
 
 ## Install Dependencies:
 
-### `cd Movie-app
-npm install`
+### `cd Movie-app`
+### `npm install`
 
 ## Start the Development Server:
 
