@@ -3,6 +3,7 @@
 ## Description:
 
 This project is a web application for browsing and potentially streaming movies. It's built with React.js for a performant and user-friendly interface, and Redux for efficient state management.
+### I do not endorse piracy of any kind I simply enjoy programming.
 
 ## Features:
 
@@ -48,4 +49,3 @@ npm (package manager that comes with Node.js) or yarn (alternative package manag
 ## Start the Development Server:
 
 ### `npm start`
-This will typically launch the application in a web browser, usually at http://localhost:3000/
